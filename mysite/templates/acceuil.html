@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html">
+<html lang="fr">
+<head>
+    <meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<title>
+		{% block title %} page d'acceuil {% endblock %}
+	</title>
+	<link rel='stylesheet' type='text/css' media='screen' 
+		href="{% static 'css/base.css'%}">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">    
+
+	{% block styles %} 
+      
+	{% endblock %}
+</head>
+{% block body %} 
+<body style="background-color:rgba(255, 255, 255, 0.918)">
+  <h1 style="font-weight: bold ; font-size:150 px; color:rgb(248, 94, 119);text-align:center"> Bienvenue Dans Mon Django Site</h1>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#" style="font-weight: bold;font-size: large; color:rgb(247, 42, 19) ">Voila Mon Site</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="/admin/" style="color:rgb(247, 42, 19)" > <img src={% static "images/admin.jpg"%}  widh="50 px" height="50 px"> Admin </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/magasin/" style="color:rgb(247, 42, 19)" > <img src={% static "images/magasin2.jpg"%}  widh="50 px" height="50 px"> magasin virtuel </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/" style="color:rgb(247, 42, 19)" > <img src={% static "images/blog1.jpg"%} widh="50 px" height="50 px" /> blog </a>
+            </li>
+          </ul>
+          <input  type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+        </div>
+      </div>
+    </nav>
+    <img src={% static "images/arriere.jpg"%}  width="100%" , height="450 px"></center>
+    <table style="padding-bottom: 60px;width: 103%;margin-bottom: -10px;background-color:rgb(224, 203, 206); " >    
+        <tr>
+            <th><p style="font-size:30px ; color:purple">Données</p></th>
+            <th><p style="font-size:30px ; color:purple">NOS SERVICES</p></th>
+            <th><p style="font-size:30px ; color:purple">INFORMATIONS</p></th>
+        </tr>
+         <tr>
+            <th>Expédition & retours</th>
+     		<th>Service Clients</th>
+            <th>Sfax Tunisie</th>
+        </tr>
+        <tr>
+            <th>Nos magasins</th>
+            <th>Service aprés vente</th>
+            <th>(+216) 36 010 0</th>
+
+        </tr>
+        <tr>
+        	<th>Mode de paiement</th>
+            <th>Achats sécurisé</th>
+            <th>FONFON@contact.tn</th>
+        </tr>
+</table>
+
+  <!-- Copyright -->
+  <div class="text-center p-3"  style="background-color: rgba(209, 202, 202, 0.2);">
+    © 2020 Copyright:
+    <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+  </div>
+  <!-- Copyright -->
+
+
+</body>
+
+</html>
+{% endblock %}
+
+
+
+
+

@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<title>
+		{% block title %} {% endblock %}
+	</title>
+	<link rel='stylesheet' type='text/css' media='screen' 
+		href="{% static 'css/base.css'%}">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">    
+
+	{% block styles %} 
+	
+	{% endblock %}
+    
+</head>
+<body>
+    {% block body %}
+    <h1 style="color:rgb(245, 6, 85) ; font-size:40 px ; text-align: center;">Bienvenue dans notre blog  </h1>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#" style="font-weight: bold; color:rgb(38, 0, 255)">Des conseils de voyages</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="/blog/" style=" color:rgb(38, 0, 255) ">monuments célébres</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/blog/contactForm" style=" color:rgb(38, 0, 255) ">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/" style=" color:rgb(38, 0, 255) ">Quitter</a>
+              </li>
+            </ul>
+              <input  type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+          </div>
+        </div>
+      </nav>
+      <img src={% static "images/conseil.jpg"%}  width="100%" , height="400 px"></center>
+      <h1 style="font-weight: bold ; font-size:40 px; color:rgb(248, 94, 119);">8 conseils pour les voyageurs</h1>
+      <ol class="list-group list-group-numbered">
+        <li class="list-group-item">Achetez un petit sac à dos / valise Cela vous forcera à ne prendre que l’essentiel et éviter de transporter trop de choses.</li>
+        <li class="list-group-item list-group-item-action list-group-item-secondary"> Voyagez léger :  Oui, vous pouvez porter le même t-shirt deux jours d’affilée. Prenez la moitié des vêtements que vous pensez avoir besoin</li>
+        <li class="list-group-item">Emportez toujours une serviette C’est la clé du succès du voyageur avisé. Vous en aurez toujours besoin, que ce soit à la plage, dans un parc, ou tout simplement pour sécher.</li>
+        <li class="list-group-item list-group-item-action list-group-item-secondary"> Ayez toujours du cash sur vous : Vous pouvez perdre ou vous faire voler votre carte à tout moment. Ayez toujours de l’argent de côté bien caché sur vous ou dans votre valise.</li>
+        <li class="list-group-item">Assurez-vous que votre carte ne prélève pas de frais supplémentaire lors d’un paiement/retrait à l’étranger. Vous avez économisé pour voyager, pas pour donner à la banque.</li>
+        <li class="list-group-item list-group-item-action list-group-item-secondary">Voyagez seul au moins une fois Vous apprendrez beaucoup sur vous-même et comment devenir indépendant</li>
+        <li class="list-group-item">Osez utiliser une carte Vous préférez ressembler à un touriste ou vous perdre dans un quartier malfamé ?</li>
+        <li class="list-group-item list-group-item-action list-group-item-secondary">Osez parler à des étrangers: Ils pourraient devenir vos amis pour la vie.</li>
+
+      </ol>
+
+      {% endblock %}
+    </body>

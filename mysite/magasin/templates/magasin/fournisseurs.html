@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<title>
+		{% block title %} {% endblock %}
+	</title>
+	<link rel='stylesheet' type='text/css' media='screen' 
+		href="{% static 'css/base.css'%}">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">    
+
+	{% block styles %} 
+	
+	{% endblock %}
+    
+</head>
+<body>
+	{% block body %} 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#" style="font-weight: bold;color:rgb(38, 0, 255)">Les fournisseurs</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="/magasin/" style=" color:rgb(38, 0, 255) ">Produits</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/magasin/CommandeForm/" style=" color:rgb(38, 0, 255) ">Commander</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/" style=" color:rgb(38, 0, 255) ">Quitter</a>
+              </li>
+            </ul>
+            <input  type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+          </div>
+        </div>
+      </nav>
+
+      <h1 style="color:rgb(245, 6, 85) ; font-size:50 px ; ">voila la liste de nos fournisseurs</h1>
+      <table class="table">
+        <thead>
+          <tr style="background-color:rgb(236, 228, 155)">
+            <th scope="rowgroup" >NOM</th>
+            <th scope="col">ADRESSE</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">TELEPHONE</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for article in list1 %}
+          <tr>
+            <th scope="row">{{article.nom}}</th>
+            <td>{{article.adresse}}</td>
+            <td>{{article.email}}</td>
+            <td>{{article.telephone}}</td>
+          </tr>
+          {% endfor %}
+
+{% endblock %}	
+</body>
+</html>
